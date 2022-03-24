@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
+
 
 function Section({ title, description, LeftBtnText, RightBtnText, backgroundImg }) {
     return (
         <Wrap bgImage={backgroundImg} >
+            <Bounce clear>
             <TopText>
                 <h1>{title}</h1>
                 <p>{description}</p>
             </TopText>
+            </Bounce>
+            <Fade>
             <Buttons>
                 <BottonButtons>
                     <Left>
@@ -21,6 +27,7 @@ function Section({ title, description, LeftBtnText, RightBtnText, backgroundImg 
                 </BottonButtons>
                 <Down src="/images/down-arrow.svg" />
             </Buttons>
+            </Fade>
         </Wrap>
     )
 }

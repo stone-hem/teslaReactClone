@@ -12,6 +12,10 @@ body{
   overflow-x: hidden; /*hide the overflow of the page*/
 }
 
+a{
+  text-decoration: none; /*do not decorate all the a tags*/
+}
+
 
 /*cool down button animation*/
 @keyframes animateDown {
