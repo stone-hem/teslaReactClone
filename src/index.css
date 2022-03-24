@@ -9,4 +9,19 @@
 
 body{
   width: 100%;
+  overflow-x: hidden; /*hide the overflow of the page*/
+}
+
+
+/*cool down button animation*/
+@keyframes animateDown {
+  0%, 20%,50%,80%,100%{
+    transform: translateY(0);
+  }
+  40%{
+    transform: translateY(6px);
+  }
+  60%{
+    transform: translateY(4px);
+  }
 }
