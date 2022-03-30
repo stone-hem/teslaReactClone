@@ -8,17 +8,15 @@ import { useSelector } from 'react-redux';
 function Header() {
   const [SideNavStatus,setSideNavStatus]=useState(false);
   const cars=useSelector(selectCars);
-  console.log(cars);
   return (
     <Container>
       <a>
         <img src='/images/logo.svg' alt="none" />
       </a>
       <Menu>
-        <a href='#'>Model S</a>
-        <a href='#'>Model Y</a>
-        <a href='#'>Model X</a>
-        <a href='#'>Model 3</a>
+        {cars &&cars.map((car,index)=>(
+           <a key={index} href='#'>{car}</a>
+          ))}
       </Menu>
       <RightEnd>
         <a href='#'>Shop</a>
@@ -29,9 +27,15 @@ function Header() {
         <CloseWrap>
           <CustomClose onClick={()=>setSideNavStatus(false)}/>
         </CloseWrap>
-        <li>
-          <a href='#'>Existing Inventory</a>
-        </li>
+        {cars &&cars.map((car,index)=>(
+            <li key={index}>
+            <a href='#'>{car}</a>
+          </li>
+          ))}
+           <li>
+            <a href='#'>Existing Inventory</a>
+          </li>
+       
         <li>
           <a href='#'>Use Inventory</a>
         </li>
@@ -40,12 +44,6 @@ function Header() {
         </li>
         <li>
           <a href='#'>Cyber Track</a>
-        </li>
-        <li>
-          <a href='#'>Existing Inventory</a>
-        </li>
-        <li>
-          <a href='#'>Existing Inventory</a>
         </li>
       </NavMenu>
     </Container>
