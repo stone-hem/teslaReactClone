@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Translate } from '@mui/icons-material';
+import {selectCars} from '../features/cars/CarsCreate';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const [SideNavStatus,setSideNavStatus]=useState(false);
+  const cars=useSelector(selectCars);
+  console.log(cars);
   return (
     <Container>
       <a>

@@ -4,12 +4,12 @@ const initialState={
     cars:["Model s", "Model 3", "Model y", "Model x"]
 }
 
-const carsSlice=createSlice({
+const carsCreate=createSlice({
     name:"car",  
     initialState,
-    reducers:[]
+    reducers:{}
 })
 
 export const selectCars=state=>state.car.cars
 
-export default carsSlice.reducer
+export default carsCreate.reducer
